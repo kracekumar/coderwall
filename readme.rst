@@ -45,9 +45,9 @@ Example
     ::
 
     $pycoderwall kracekumar -accounts
-    ===accounts===
-    {u'github': u'kracekumar'}
-    ===End===
+        ===accounts===
+        {u'github': u'kracekumar'}
+        ===End===
 
     ::
     pycoderwall kracekumar -location
