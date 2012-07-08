@@ -22,35 +22,51 @@ class CoderWall(object):
         self.username = username
         self.to_return = to_return
         self.format = format
-        self.data = self.fetch_details()
-        if self.data is None:
+        self.output = []
+        self.fetch_details()
+        if None in self.output:
             self.error()
-        self.output()
 
     def fetch_details(self):
         try:
-            r = requests.get('/'.join([CoderWall.BASE_URL, self.username]) + '.json')
-            return r.json if r.ok else None
+            for username in self.username:
+                r = requests.get('/'.join([CoderWall.BASE_URL, username]) + '.json')
+                self.output.append(r.json if r.ok else None)
         except requests.ConnectionError:
             raise requests.ConnectionError
         except requests.HTTPError:
             raise requests.HTTPError
 
-    def output(self):
-        if self.format is 'str':
-            print ujson.dumps(self.data)
-        else:
-            print self.data
+
+    def check_badge(self, badges):
+        if self.output:
+            print self.output
 
     def error(self):
         print("User: %s not found" % (self.username))
 
 
+def resolve_dependecy(command_line_params):
+    if 'name' in command_line_params:
+        coderwall = CoderWall(command_line_params['name'].split())
+        command_line_params.pop('name')
+        if 'badge' in command_line_params:
+            coderwall.check_badge(command_line_params['badge'].split())
+
 def main():
     app = foundation.CementApp("CoderWall")
+    to_pop = ('debug', 'suppress_output')
     try:
         app.setup()
+        app.args.add_argument('-n', '--name', action="store", metavar="NAME", help="Pass name/names of coderwall profile to look for")
+        app.args.add_argument('-b', '--badge', action="store", metavar="BADGE", help="Check whether user has got particular badge/badges or not")
         app.run()
+        command_line = app.pargs.__dict__
+        for key in to_pop:
+            command_line.pop(key)
+        print(command_line)
+        resolve_dependecy(command_line)
+        print("started")
     finally:
         app.close()
 
