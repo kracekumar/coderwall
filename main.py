@@ -35,14 +35,20 @@ class CoderWall(object):
         print("User: %s not found" % (self.username))
 
     def evaluate(self, command_line_params):
-        for key, value in command_line_params.iteritems():
-            if value:
-                self.output[key] = self.data[0][key]
+        if True not in command_line_params.values():
+            self.output = self.data
+        else:
+            for key, value in command_line_params.iteritems():
+                if value:
+                    self.output[key] = self.data[0][key]
 
     def final_output(self):
-        for key, val in self.output.iteritems():
-            print("==={0}===".format(key))
-            pprint(val)
+        if isinstance(self.output, dict):
+            for key, val in self.output.iteritems():
+                print("==={0}===".format(key))
+                pprint(val)
+        else:
+            pprint(self.output)
 
 
 def resolve_dependecy(command_line_params):
@@ -51,7 +57,6 @@ def resolve_dependecy(command_line_params):
         command_line_params.pop('username')
         coderwall.evaluate(command_line_params)
         coderwall.final_output()
-
 
 
 def main():
@@ -69,11 +74,9 @@ def main():
         command_line = app.pargs.__dict__
         for key in to_pop:
             command_line.pop(key)
-        print(command_line)
         resolve_dependecy(command_line)
     finally:
         app.close()
 
 if __name__ == "__main__":
     main()
-
