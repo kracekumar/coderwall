@@ -16,7 +16,8 @@ Installtion
 
 Usage
 -----
-    ``:
+    ::
+
     usage: pycoderwall [-h] [--debug] [--quiet] [-badges] [-endorsements]
                    [-accounts] [-location] [-team]
                    USERNAME
@@ -38,24 +39,23 @@ optional arguments:
   -team, --team         List all Teams user is associated with
 
 
+
 Example
 ----
-    ``:
+    ::
+
     $pycoderwall kracekumar -accounts
     ===accounts===
     {u'github': u'kracekumar'}
     ===End===
 
-    ``
-
-    ``:
+    ::
     pycoderwall kracekumar -location
     ===location===
     u'Bangalore'
     ===End===
-    ``
 
-    ``:
+    ::
     pycoderwall kracekumar
 [{u'accounts': {u'github': u'kracekumar'},
   u'badges': [{u'badge': u'http://cdn.coderwall.com/assets/badges/trex-8f3d5d72233031329b3365d5f16fd5d2.png',
@@ -92,4 +92,4 @@ Example
   u'team': None,
   u'username': u'kracekumar'}]
 ===End===
-    ``
+
