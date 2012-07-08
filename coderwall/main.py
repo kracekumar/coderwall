@@ -11,6 +11,7 @@ except ImportError:
     raise ImportError("Unable to import cement. Try pip install cement")
 from pprint import pprint
 
+
 class CoderWall(object):
     BASE_URL = "http://coderwall.com"
 
@@ -47,7 +48,6 @@ class CoderWall(object):
             for key, val in self.output.iteritems():
                 print("==={0}===".format(key))
                 pprint(val)
-
         else:
             pprint(self.output)
         print("===End===")

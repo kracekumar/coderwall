@@ -5,5 +5,4 @@ CoderWall
 Built With
 ----
     - requests
-    - ujson
     - Cement
