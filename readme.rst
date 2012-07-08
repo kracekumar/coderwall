@@ -44,21 +44,25 @@ Example
 ----
     ::
 
-    $pycoderwall kracekumar -accounts
+        $pycoderwall kracekumar -accounts
+
         ===accounts===
         {u'github': u'kracekumar'}
         ===End===
 
     ::
-    pycoderwall kracekumar -location
-    ===location===
-    u'Bangalore'
-    ===End===
+
+        $pycoderwall kracekumar -location
+
+        ===location===
+        u'Bangalore'
+        ===End===
 
     ::
-    pycoderwall kracekumar
-[{u'accounts': {u'github': u'kracekumar'},
-  u'badges': [{u'badge': u'http://cdn.coderwall.com/assets/badges/trex-8f3d5d72233031329b3365d5f16fd5d2.png',
+
+        $pycoderwall kracekumar
+        [{u'accounts': {u'github': u'kracekumar'},
+            u'badges': [{u'badge': u'http://cdn.coderwall.com/assets/badges/trex-8f3d5d72233031329b3365d5f16fd5d2.png',
                u'created': u'2012-05-06T10:13:08Z',
                u'description': u'Have at least one original repo where C is the dominant language',
                u'name': u'T-Rex'},
@@ -86,10 +90,11 @@ Example
                u'created': u'2012-04-13T20:32:08Z',
                u'description': u'Have at least one original repo where C# is the dominant language',
                u'name': u'Lab'}],
-  u'endorsements': 0,
-  u'location': u'Bangalore',
-  u'name': u'kracekumar',
-  u'team': None,
-  u'username': u'kracekumar'}]
-===End===
+        u'endorsements': 0,
+        u'location': u'Bangalore',
+        u'name': u'kracekumar',
+        u'team': None,
+        u'username': u'kracekumar'}]
+
+    ===End===
 
