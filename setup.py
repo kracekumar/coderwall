@@ -16,7 +16,7 @@ Built With
          """
 setup(
     name='pycoderwall',
-    version='0.0.5',
+    version='0.0.6',
     url='https://github.com/kracekumar/coderwall',
     license='BSD',
     author='kracekumar',
