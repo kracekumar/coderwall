@@ -9,14 +9,14 @@ Built With
 
 Installtion
 ----
-    `pip install pycoderwall`
-    `$wget https://github.com/kracekumar/coderwall/zipball/master`
-    `$unzip -d coderwall`
-    `$sudo python setup.py install`
+    ``pip install pycoderwall``
+    ``$wget https://github.com/kracekumar/coderwall/zipball/master``
+    ``$unzip -d coderwall``
+    ``$sudo python setup.py install``
 
 Usage
 -----
-    ```
+    ``:
     usage: pycoderwall [-h] [--debug] [--quiet] [-badges] [-endorsements]
                    [-accounts] [-location] [-team]
                    USERNAME
@@ -36,26 +36,27 @@ optional arguments:
   -location, --location
                         Display location
   -team, --team         List all Teams user is associated with
-    ```
+
 
 Example
 ----
-    ```
+    ``:
     $pycoderwall kracekumar -accounts
     ===accounts===
     {u'github': u'kracekumar'}
     ===End===
 
-    ```
+    ``
 
-    ```
+    ``:
     pycoderwall kracekumar -location
     ===location===
     u'Bangalore'
     ===End===
-    ```
+    ``
 
-    ``` pycoderwall kracekumar
+    ``:
+    pycoderwall kracekumar
 [{u'accounts': {u'github': u'kracekumar'},
   u'badges': [{u'badge': u'http://cdn.coderwall.com/assets/badges/trex-8f3d5d72233031329b3365d5f16fd5d2.png',
                u'created': u'2012-05-06T10:13:08Z',
@@ -91,4 +92,4 @@ Example
   u'team': None,
   u'username': u'kracekumar'}]
 ===End===
-    ```
+    ``
