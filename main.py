@@ -47,16 +47,16 @@ class CoderWall(object):
             for key, val in self.output.iteritems():
                 print("==={0}===".format(key))
                 pprint(val)
+                print("===End===")
         else:
             pprint(self.output)
 
 
 def resolve_dependecy(command_line_params):
-    if command_line_params['username']:
-        coderwall = CoderWall(command_line_params['username'])
-        command_line_params.pop('username')
-        coderwall.evaluate(command_line_params)
-        coderwall.final_output()
+    coderwall = CoderWall(command_line_params['username'])
+    command_line_params.pop('username')
+    coderwall.evaluate(command_line_params)
+    coderwall.final_output()
 
 
 def main():
@@ -64,7 +64,7 @@ def main():
     to_pop = ('debug', 'suppress_output')
     try:
         app.setup()
-        app.args.add_argument('-n', '--username', action="store", metavar="USERNAME", help="Pass username of coderwall profile to look for")
+        app.args.add_argument('username', metavar="USERNAME", help="Pass username of coderwall profile to look for")
         app.args.add_argument('-b', '--badges', action="store_true", help="Display badges")
         app.args.add_argument('-e', '--endorsements', action="store_true", help="List all Endorsments ")
         app.args.add_argument('-a', '--accounts', action="store_true", help="List all accounts")
@@ -74,7 +74,10 @@ def main():
         command_line = app.pargs.__dict__
         for key in to_pop:
             command_line.pop(key)
-        resolve_dependecy(command_line)
+        if command_line['username']:
+            resolve_dependecy(command_line)
+        else:
+            pass
     finally:
         app.close()
 
