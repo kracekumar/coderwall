@@ -9,10 +9,12 @@ Built With
 
 Installtion
 ----
-    ``pip install pycoderwall``
-    ``$wget https://github.com/kracekumar/coderwall/zipball/master``
-    ``$unzip -d coderwall``
-    ``$sudo python setup.py install``
+    ::
+
+        pip install pycoderwall
+        $wget https://github.com/kracekumar/coderwall/zipball/master
+        $unzip -d coderwall
+        $sudo python setup.py install
 
 Usage
 -----
@@ -95,6 +97,5 @@ Example
         u'name': u'kracekumar',
         u'team': None,
         u'username': u'kracekumar'}]
-
-    ===End===
+        ===End===
 
