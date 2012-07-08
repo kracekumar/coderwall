@@ -47,9 +47,10 @@ class CoderWall(object):
             for key, val in self.output.iteritems():
                 print("==={0}===".format(key))
                 pprint(val)
-                print("===End===")
+
         else:
             pprint(self.output)
+        print("===End===")
 
 
 def resolve_dependecy(command_line_params):
@@ -65,11 +66,11 @@ def main():
     try:
         app.setup()
         app.args.add_argument('username', metavar="USERNAME", help="Pass username of coderwall profile to look for")
-        app.args.add_argument('-b', '--badges', action="store_true", help="Display badges")
-        app.args.add_argument('-e', '--endorsements', action="store_true", help="List all Endorsments ")
-        app.args.add_argument('-a', '--accounts', action="store_true", help="List all accounts")
-        app.args.add_argument('-l', '--location', action="store_true", help="Display location")
-        app.args.add_argument('-t', '--team', action="store_true", help="List all Teams user is associated with")
+        app.args.add_argument('-badges', '--badges', action="store_true", help="Display badges")
+        app.args.add_argument('-endorsements', '--endorsements', action="store_true", help="List all Endorsments ")
+        app.args.add_argument('-accounts', '--accounts', action="store_true", help="List all accounts")
+        app.args.add_argument('-location', '--location', action="store_true", help="Display location")
+        app.args.add_argument('-team', '--team', action="store_true", help="List all Teams user is associated with")
         app.run()
         command_line = app.pargs.__dict__
         for key in to_pop:
