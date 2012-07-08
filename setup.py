@@ -16,7 +16,7 @@ Built With
          """
 setup(
     name='pycoderwall',
-    version='0.0.4',
+    version='0.0.5',
     url='https://github.com/kracekumar/coderwall',
     license='BSD',
     author='kracekumar',
@@ -31,7 +31,7 @@ setup(
             ]
     },
     classifiers=[
-          'Development Status :: 2 - Pre-Alpha',
+          'Development Status :: 4 - Beta',
           'Environment :: Console',
           'Intended Audience :: Developers',
           'Intended Audience :: System Administrators',
@@ -43,7 +43,6 @@ setup(
           'Programming Language :: Python :: 2.5',
           'Programming Language :: Python :: 2.6',
           'Topic :: Software Development',
-          'Topic :: Software Development :: Build Tools',
           'Topic :: Software Development :: Libraries',
           'Topic :: Software Development :: Libraries :: Python Modules',
 
