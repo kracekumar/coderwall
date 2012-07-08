@@ -13,12 +13,6 @@ Installtion
 
         pip install pycoderwall
 
-or
-
-
-        $wget https://github.com/kracekumar/coderwall/zipball/master
-        $unzip -d coderwall
-        $sudo python setup.py install
 
 Usage
 -----
